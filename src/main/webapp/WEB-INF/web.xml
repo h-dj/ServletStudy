@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+        http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!--配置全局初始化参数方法-->
+    <context-param>
+        <param-name>charset</param-name>
+        <param-value>utf-8</param-value>
+    </context-param>
+
+    <!--servlet入门程序-->
+    <servlet>
+        <description></description>
+        <display-name>Servlet1_1</display-name><!--// 类的显示名称 -->
+        <servlet-name>Servlet1_1</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.Servlet1_1</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1_1</servlet-name><!--// 类的别名 -->
+        <url-pattern>/hello</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+    <!--使用servlet接口实现servlet实例-->
+    <servlet>
+        <servlet-name>Servlet1_2</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.Servlet1_2</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1_2</servlet-name><!--// 类的别名 -->
+        <url-pattern>/servletInterface/index</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+
+    <!--使用GenericServlet 实现servlet实例-->
+    <servlet>
+        <servlet-name>Servlet1_3</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.Servlet1_3</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1_3</servlet-name><!--// 类的别名 -->
+        <url-pattern>/GenericServlet/index</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+
+    <!--测试获取请求报文表头-->
+    <servlet>
+        <servlet-name>Servlet1_4</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.Servlet1_4</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1_4</servlet-name><!--// 类的别名 -->
+        <url-pattern>/getHeaderNames/index</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+
+    <!--测试请求转发-->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.dispatcher.LoginServlet</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name><!--// 类的别名 -->
+        <url-pattern>/login</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WelcomeServlet</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.dispatcher.WelcomeServlet</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name><!--// 类的别名 -->
+        <url-pattern>/WelcomeServlet</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+    <!--使用sendRedirect创建自定义关键字搜索-->
+    <servlet>
+        <servlet-name>Servlet1_5</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.Servlet1_5</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1_5</servlet-name><!--// 类的别名 -->
+        <url-pattern>/Servlet1_5</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+
+    <!--配置初始化参数-->
+    <servlet>
+        <servlet-name>Servlet1_6</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.Servlet1_6</servlet-class><!--// 类的名称 -->
+        <!--设置初始化参数-->
+        <init-param>
+            <param-name>mysql_driver</param-name> <!--//参数名称-->
+            <param-value>com.mysql.jdbc.Driver</param-value><!--//参数值-->
+        </init-param>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1_6</servlet-name><!--// 类的别名 -->
+        <url-pattern>/Servlet1_6</url-pattern><!--// 请求此类的对应URL -->
+
+    </servlet-mapping>
+
+
+    <!--cookie-->
+    <servlet>
+        <servlet-name>LogingServlet</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.cookieTest.LoginServlet</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogingServlet</servlet-name><!--// 类的别名 -->
+        <url-pattern>/LogingServlet</url-pattern><!--// 请求此类的对应URL -->
+
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.cookieTest.LogoutServlet</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name><!--// 类的别名 -->
+        <url-pattern>/LogoutServlet</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name><!--// 类的别名 -->
+        <servlet-class>com.h_dj.servlet.basic.cookieTest.ProfileServlet</servlet-class><!--// 类的名称 -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name><!--// 类的别名 -->
+        <url-pattern>/ProfileServlet</url-pattern><!--// 请求此类的对应URL -->
+    </servlet-mapping>
+
+    <!--ServletContextListener 事件与监听器-->
+    <listener>
+        <listener-class>com.h_dj.servlet.event.MyServletContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>FetchDataServlet</servlet-name>
+        <servlet-class>com.h_dj.servlet.event.FatchDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FetchDataServlet</servlet-name>
+        <url-pattern>/getdata</url-pattern>
+    </servlet-mapping>
+
+
+    <!--HttpSessionListener 事件与监听器-->
+    <listener>
+        <listener-class>com.h_dj.servlet.event.CountUserHttpSessionListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>FirstServlet</servlet-name>
+        <servlet-class>com.h_dj.servlet.event.FisrtServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FirstServlet</servlet-name>
+        <url-pattern>/FirstServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SecondServlet</servlet-name>
+        <servlet-class>com.h_dj.servlet.event.SecondServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SecondServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+</web-app>

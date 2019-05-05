@@ -1,4 +1,4 @@
-package com.h_dj.servlet.basic;
+package cn.h_dj.servlet.basic;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

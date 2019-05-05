@@ -1,31 +1,33 @@
-package com.h_dj.servlet.basic;
+package cn.h_dj.servlet.basic;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * @author h_dj
  * @version V1.0
- * @Title: Servlet1_5
+ * @Title: Servlet1_6
  * @Package com.h_dj.servlet.basic
- * @Description: 请求重定向
- * @date 2018/3/21 21:22
+ * @Description: TODO
+ * @date 2018/3/21 22:33
  */
-public class Servlet1_5 extends HttpServlet {
+public class Servlet1_6 extends HttpServlet {
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        resp.setContentType("utf-8");
         resp.setContentType("text/html");
-        String wd = req.getParameter("wd");
-        if (wd != null) {
-            resp.sendRedirect("https://www.baidu.com/s?wd=" + wd);
-        }
-        //https://www.baidu.com/s?wd=12
+        PrintWriter out = resp.getWriter();
+
+        ServletConfig config = getServletConfig();
+        String driver = config.getInitParameter("mysql_driver");
+        out.print("Driver details is: <b>" + driver+"</b>");
+        out.close();
+
     }
 }

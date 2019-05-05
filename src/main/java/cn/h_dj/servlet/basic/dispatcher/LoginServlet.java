@@ -1,4 +1,4 @@
-package com.h_dj.servlet.basic.dispatcher;
+package cn.h_dj.servlet.basic.dispatcher;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

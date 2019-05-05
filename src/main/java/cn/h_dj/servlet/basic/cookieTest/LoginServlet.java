@@ -1,4 +1,4 @@
-package com.h_dj.servlet.basic.cookieTest;
+package cn.h_dj.servlet.basic.cookieTest;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
